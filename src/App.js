@@ -1,9 +1,9 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from 'reactstrap';
 import $ from 'jquery';
+
 import Aatrox from './images/Aatrox.png'
 import Ahri from './images/Ahri.png'
 import Akali from './images/Akali.png'
@@ -150,16 +150,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    axios.get('http://jsonplaceholder.typicode.com/posts/1', {
-      headers: {'Access-Control-Allow-Origin': '*'}
-    })
-    .then(function(response) {
-      //alert(JSON.stringify(response.data));
-    })
-    .catch(function(error) {
-      alert("Error: " + error.status);
-    });
-
     function setHeader(xhr) {
       xhr.setRequestHeader('X-Riot-Token', 'RGAPI-210f1e27-46d3-41b9-a5e9-907d79fdeb85');
     }
@@ -205,6 +195,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      	<div className="content">
+      	<div className="left-column">
+      		<h3 className="column-header">Your Team</h3>
+      	</div>
         <table className="champ-select-box">
           <tbody>
             <tr>
@@ -323,6 +317,10 @@ class App extends Component {
           </tr>
           </tbody>
         </table>*/}
+       	<div className="right-column">
+       		<h3 className="column-header">Enemy Team</h3>
+      	</div>
+      </div>
       </div>
     );
   }

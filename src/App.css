@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
+
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -23,15 +26,44 @@
   to { transform: rotate(360deg); }
 }
 
+.content {
+  width: 1220px !important;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
 .box {
     width:600px;
     height:600px;
     background-color:#d9d9d9;
-    position:fixed;
-    margin-left:-300px; /* half of width */
-    margin-top:-300px;  /* half of height */
     top:50%;
     left:50%;
+}
+
+.left-column {
+  width: 200px;
+  height: 600px;
+  padding-top: 20px;
+  background-color: black;
+  display: inline-block;
+  float: left;
+}
+
+.right-column {
+  width: 200px;
+  height: 600px;
+  padding-top: 20px;
+  background-color: black;
+  display: inline-block;
+  float: right;
+}
+
+.column-header {
+  font: bold 16px/150% 'IM Fell Great Primer', Arial, sans-serif;
+  color: white;
 }
 
 .champ-button {
@@ -54,12 +86,8 @@
 }
 
 .champ-select-box {
-    width:800px;
+    width:820px;
     height:600px;
     background-color:#d9d9d9;
-    position:fixed;
-    margin-left:-400px; /* half of width */
-    margin-top:-300px;  /* half of height */
-    top:50%;
-    left:50%;
+    display: inline-block;
 }
