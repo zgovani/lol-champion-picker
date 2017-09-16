@@ -189,17 +189,21 @@ class App extends Component {
   }
 
   championClicked(e) {
-    alert(e.target.id);
+    //alert(e.target.id);
   }
 
   render() {
+    var championNames = ["Aatrox", "Ahri"];
+    //alert(championNames);
     return (
       <div className="App">
       	<div className="content">
       	<div className="left-column">
       		<h3 className="column-header">Your Team</h3>
       	</div>
-        <table className="champ-select-box">
+        
+      <div className="champ-select-box">
+        <table>
           <tbody>
             <tr>
               <td>
@@ -266,57 +270,387 @@ class App extends Component {
                 <img className="champ-image" width="80px" src={Darius} alt={"Darius"} id="Darius" onClick={this.championClicked}/>
               </td>
             </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Diana} alt={"Diana"} id="Diana" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Draven} alt={"Draven"} id="Draven" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={DrMundo} alt={"DrMundo"} id="DrMundo" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Ekko} alt={"Ekko"} id="Ekko" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Elise} alt={"Elise"} id="Elise" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Evelynn} alt={"Evelynn"} id="Evelynn" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Ezreal} alt={"Ezreal"} id="Ezreal" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={FiddleSticks} alt={"FiddleSticks"} id="FiddleSticks" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Fiora} alt={"Fiora"} id="Fiora" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Fizz} alt={"Fizz"} id="Fizz" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Galio} alt={"Galio"} id="Galio" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Gangplank} alt={"Gangplank"} id="Gangplank" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Garen} alt={"Garen"} id="Garen" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Gnar} alt={"Gnar"} id="Gnar" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Gragas} alt={"Gragas"} id="Gragas" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Graves} alt={"Graves"} id="Graves" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Hecarim} alt={"Hecarim"} id="Hecarim" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Heimerdinger} alt={"Heimerdinger"} id="Heimerdinger" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Illaoi} alt={"Illaoi"} id="Illaoi" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Irelia} alt={"Irelia"} id="Irelia" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Ivern} alt={"Ivern"} id="Ivern" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Janna} alt={"Janna"} id="Janna" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={JarvanIV} alt={"JarvanIV"} id="JarvanIV" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Jax} alt={"Jax"} id="Jax" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Jayce} alt={"Jayce"} id="Jayce" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Jhin} alt={"Jhin"} id="Jhin" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Jinx} alt={"Jinx"} id="Jinx" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Kalista} alt={"Kalista"} id="Kalista" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Karma} alt={"Karma"} id="Karma" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Karthus} alt={"Karthus"} id="Karthus" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Kassadin} alt={"Kassadin"} id="Kassadin" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Katarina} alt={"Katarina"} id="Katarina" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Kayle} alt={"Kayle"} id="Kayle" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Kennen} alt={"Kennen"} id="Kennen" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Khazix} alt={"Khazix"} id="Khazix" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Kindred} alt={"Kindred"} id="Kindred" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Kled} alt={"Kled"} id="Kled" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={KogMaw} alt={"KogMaw"} id="KogMaw" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Leblanc} alt={"Leblanc"} id="Leblanc" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={LeeSin} alt={"LeeSin"} id="LeeSin" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Leona} alt={"Leona"} id="Leona" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Lissandra} alt={"Lissandra"} id="Lissandra" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Lucian} alt={"Lucian"} id="Lucian" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Lulu} alt={"Lulu"} id="Lulu" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Lux} alt={"Lux"} id="Lux" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Malphite} alt={"Malphite"} id="Malphite" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Malzahar} alt={"Malzahar"} id="Malzahar" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Maokai} alt={"Maokai"} id="Maokai" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={MasterYi} alt={"MasterYi"} id="MasterYi" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={MissFortune} alt={"MissFortune"} id="MissFortune" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={MonkeyKing} alt={"MonkeyKing"} id="MonkeyKing" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Mordekaiser} alt={"Mordekaiser"} id="Mordekaiser" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Morgana} alt={"Morgana"} id="Morgana" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Nami} alt={"Nami"} id="Nami" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Nasus} alt={"Nasus"} id="Nasus" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Nautilus} alt={"Nautilus"} id="Nautilus" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Nidalee} alt={"Nidalee"} id="Nidalee" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Nocturne} alt={"Nocturne"} id="Nocturne" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Nunu} alt={"Nunu"} id="Nunu" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Olaf} alt={"Olaf"} id="Olaf" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Orianna} alt={"Orianna"} id="Orianna" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Pantheon} alt={"Pantheon"} id="Pantheon" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Poppy} alt={"Poppy"} id="Poppy" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Quinn} alt={"Quinn"} id="Quinn" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Rammus} alt={"Rammus"} id="Rammus" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={RekSai} alt={"RekSai"} id="RekSai" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Renekton} alt={"Renekton"} id="Renekton" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Rengar} alt={"Rengar"} id="Rengar" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Riven} alt={"Riven"} id="Riven" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Rumble} alt={"Rumble"} id="Rumble" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Ryze} alt={"Ryze"} id="Ryze" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Sejuani} alt={"Sejuani"} id="Sejuani" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Shaco} alt={"Shaco"} id="Shaco" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Shen} alt={"Shen"} id="Shen" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Shyvana} alt={"Shyvana"} id="Shyvana" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Singed} alt={"Singed"} id="Singed" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Sion} alt={"Sion"} id="Sion" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Sivir} alt={"Sivir"} id="Sivir" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Skarner} alt={"Skarner"} id="Skarner" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Sona} alt={"Sona"} id="Sona" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Soraka} alt={"Soraka"} id="Soraka" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Swain} alt={"Swain"} id="Swain" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Syndra} alt={"Syndra"} id="Syndra" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={TahmKench} alt={"TahmKench"} id="TahmKench" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Taliyah} alt={"Taliyah"} id="Taliyah" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Talon} alt={"Talon"} id="Talon" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Taric} alt={"Taric"} id="Taric" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Teemo} alt={"Teemo"} id="Teemo" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Thresh} alt={"Thresh"} id="Thresh" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Tristana} alt={"Tristana"} id="Tristana" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Trundle} alt={"Trundle"} id="Trundle" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Tryndamere} alt={"Tryndamere"} id="Tryndamere" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={TwistedFate} alt={"TwistedFate"} id="TwistedFate" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Twitch} alt={"Twitch"} id="Twitch" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Udyr} alt={"Udyr"} id="Udyr" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Urgot} alt={"Urgot"} id="Urgot" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Varus} alt={"Varus"} id="Varus" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Vayne} alt={"Vayne"} id="Vayne" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Veigar} alt={"Veigar"} id="Veigar" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Velkoz} alt={"Velkoz"} id="Velkoz" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Vi} alt={"Vi"} id="Vi" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Viktor} alt={"Viktor"} id="Viktor" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Vladimir} alt={"Vladimir"} id="Vladimir" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Volibear} alt={"Volibear"} id="Volibear" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Warwick} alt={"Warwick"} id="Warwick" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Xerath} alt={"Xerath"} id="Xerath" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={XinZhao} alt={"XinZhao"} id="XinZhao" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Yasuo} alt={"Yasuo"} id="Yasuo" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Yorick} alt={"Yorick"} id="Yorick" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Zac} alt={"Zac"} id="Zac" onClick={this.championClicked}/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img className="champ-image" width="80px" src={Zed} alt={"Zed"} id="Zed" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Ziggs} alt={"Ziggs"} id="Ziggs" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Zilean} alt={"Zilean"} id="Zilean" onClick={this.championClicked}/>
+              </td>
+              <td>
+                <img className="champ-image" width="80px" src={Zyra} alt={"Zyra"} id="Zyra" onClick={this.championClicked}/>
+              </td>
+            </tr>
           </tbody>
         </table>
-
-        {/*<table className="box">
-        <tbody>
-          <tr>
-            <td>
-              <Button color="danger">Champ 1</Button>
-            </td>
-            <td>
-              <Button color="danger">Champ 2</Button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <Button color="danger">Champ 3</Button>
-            </td>
-            <td>
-              <Button color="danger">Champ 4</Button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <Button color="danger">Champ 5</Button>
-            </td>
-            <td>
-              <Button color="danger">Champ 6</Button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <Button color="danger">Champ 7</Button>
-            </td>
-            <td>
-              <Button color="danger">Champ 8</Button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <Button color="danger">Champ 9</Button>
-            </td>
-            <td>
-              <Button color="danger">Champ 10</Button>
-            </td>
-          </tr>
-          </tbody>
-        </table>*/}
+        </div>
        	<div className="right-column">
        		<h3 className="column-header">Enemy Team</h3>
       	</div>

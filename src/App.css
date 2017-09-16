@@ -29,18 +29,18 @@
 .content {
   width: 1220px !important;
   position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
 }
 
 .box {
-    width:600px;
-    height:600px;
-    background-color:#d9d9d9;
-    top:50%;
-    left:50%;
+  width: 600px;
+  height: 600px;
+  background-color: #d9d9d9;
+  top: 50%;
+  left: 50%;
 }
 
 .left-column {
@@ -70,24 +70,27 @@
   width:120px;
   height:120px;
   border-width:0px;
-    padding:0px;
-    line-height:0;
+  padding:0px;
+  line-height:0;
 }
 
 .champ-image {
-    width:76px;
-    margin:2px;
+  width:76px;
+  margin:1px;
 }
 
 .champ-image:hover {
-    cursor: pointer;
-    width:70px;
-    margin:5px;
+  cursor: pointer;
+  width:72px;
+  margin:3px;
 }
 
 .champ-select-box {
-    width:820px;
-    height:600px;
-    background-color:#d9d9d9;
-    display: inline-block;
+  overflow: auto;
+  width: 820px;
+  height: 600px;
+  background-color:#ffffff;
+  display: inline-block;
 }
+
+thead, tbody, tr, th { display: block; }
