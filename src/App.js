@@ -4,6 +4,8 @@ import './App.css';
 import { Button } from 'reactstrap';
 import $ from 'jquery';
 
+import roboto from './fonts/Roboto/Roboto-Light.ttf'
+
 import Aatrox from './images/Aatrox.png'
 import Ahri from './images/Ahri.png'
 import Akali from './images/Akali.png'
@@ -144,9 +146,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      team_one_picks: Array(5).fill(null),
-      team_two_picks: Array(5).fill(null)
+      team_one_picks: Array(0),
+      team_two_picks: Array(0),
+      currentSelection: 1,  //1 = left 1, 2 = left 2... 6 = right 1
     };
+
+    this.championClicked = this.championClicked.bind(this);
   }
 
   componentWillMount() {
@@ -172,34 +177,68 @@ class App extends Component {
       error: function(error) { alert(JSON.stringify(error)); },
       dataType: 'json'
     });
-
-    /*axios.get('https://na1.api.riotgames.com/lol/platform/v3/champions?freeToPlay=false', {
-      headers: {'X-Riot-Token': 'RGAPI-56b52ba5-cec7-41ba-953b-a49ac9ef3a8f',
-                "Access-Control-Allow-Origin": "*",
-                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
-            'Access-Control-Allow-Headers': 'Content-Type, X-Auth-Token, Origin',
-            "contentType": "application/json"}
-    })
-    .then(function(response) {
-      alert(response.data);
-    })
-    .catch(function(error) {
-      alert("Error: " + error.status);
-    })*/
   }
 
   championClicked(e) {
-    //alert(e.target.id);
+    var currentList = [];
+    var currentSelection = this.state.currentSelection;
+    if (currentSelection >= 6) {
+      currentList = this.state.team_two_picks.slice();
+    } else {
+      currentList = this.state.team_one_picks.slice();
+    }
+
+    currentList[currentSelection % 6] = e.target.id;
+
+    this.setState({
+      currentSelection: this.state.currentSelection + 1,
+    });
+
+    if (currentSelection >= 6) {
+      this.setState({
+        team_two_picks: currentList
+      });
+    } else {
+      this.setState({
+        team_one_picks: currentList
+      });
+    }
+  }
+
+  renderTeamOnePicks(team_one_picks) {
+    for (var i = 0; i < team_one_picks.length; i++) {
+      console.log(team_one_picks[i]);
+    }
+
+    const listItems = team_one_picks.map((pick) =>
+      <tr text-align="center">
+        <td text-align="center" width="200px">
+          <img className="selected-image" src={require('./images/' + pick + '.png')} />
+        </td>
+      </tr>
+    );
+
+    return listItems;
   }
 
   render() {
-    var championNames = ["Aatrox", "Ahri"];
-    //alert(championNames);
+    let team_one_list = this.renderTeamOnePicks(this.state.team_one_picks);
+    let team_two_list = this.renderTeamOnePicks(this.state.team_two_picks);
+
+    //alert(this.state.team_one_picks + " - " + this.state.team_two_picks);
+    
     return (
+      //{this.renderTeamOnePicks(this.state.team_one_picks)}
       <div className="App">
       	<div className="content">
       	<div className="left-column">
       		<h3 className="column-header">Your Team</h3>
+          
+          <table width="100%" height="100%" text-align="center">
+            <tbody text-align="center">
+              {team_one_list}
+            </tbody>
+          </table>
       	</div>
         
       <div className="champ-select-box">
@@ -207,7 +246,7 @@ class App extends Component {
           <tbody>
             <tr>
               <td>
-                <img className="champ-image" width="80px" src={Aatrox} alt={"Aatrox"} id="Aatrox" onClick={this.championClicked}/>
+                <img className="champ-image" width="80px" src={require('./images/Aatrox.png')} alt={"Aatrox"} id="Aatrox" onClick={this.championClicked}/>
               </td>
               <td>
                 <img className="champ-image" width="80px" src={Ahri} alt={"Ahri"} id="Ahri" onClick={this.championClicked}/>
@@ -653,6 +692,12 @@ class App extends Component {
         </div>
        	<div className="right-column">
        		<h3 className="column-header">Enemy Team</h3>
+
+          <table width="100%" height="100%" text-align="center">
+            <tbody text-align="center">
+              {team_two_list}
+            </tbody>
+          </table>
       	</div>
       </div>
       </div>

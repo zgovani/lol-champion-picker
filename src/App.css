@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .App {
   text-align: center;
@@ -47,7 +48,7 @@
   width: 200px;
   height: 600px;
   padding-top: 20px;
-  background-color: black;
+  background-color: white;
   display: inline-block;
   float: left;
 }
@@ -56,14 +57,16 @@
   width: 200px;
   height: 600px;
   padding-top: 20px;
-  background-color: black;
+  background-color: white;
   display: inline-block;
   float: right;
 }
 
 .column-header {
-  font: bold 16px/150% 'IM Fell Great Primer', Arial, sans-serif;
-  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: black;
+  margin-bottom:20px;
 }
 
 .champ-button {
@@ -77,6 +80,11 @@
 .champ-image {
   width:76px;
   margin:1px;
+}
+
+.selected-image {
+  width:76px;
+  margin-bottom:10px;
 }
 
 .champ-image:hover {
