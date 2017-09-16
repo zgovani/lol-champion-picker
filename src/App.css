@@ -44,22 +44,36 @@
 
 .champ-image {
     width:76px;
-    margin:2px;
+    margin:1px;
 }
 
 .champ-image:hover {
     cursor: pointer;
-    width:70px;
-    margin:5px;
+    width:72px;
+    margin:3px;
 }
 
 .champ-select-box {
     width:800px;
-    height:600px;
-    background-color:#d9d9d9;
+    height:150px;
+    background-color:#ffffff;
     position:fixed;
     margin-left:-400px; /* half of width */
-    margin-top:-300px;  /* half of height */
+    margin-top:-75px;  /* half of height */
     top:50%;
     left:50%;
 }
+
+.fuck {
+  overflow:auto;
+  width:800px;
+    height:300px;
+    background-color:#ffffff;
+    position:fixed;
+    margin-left:-400px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:50%;
+    left:50%;
+}
+
+thead, tbody, tr, th { display: block; }
