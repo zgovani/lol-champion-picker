@@ -17,10 +17,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-<<<<<<< HEAD
-=======
 import os
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
 import argparse
 import sys
 import tempfile
@@ -105,12 +102,9 @@ deep_columns = [
     capital_loss,
     hours_per_week,
 ] '''
-<<<<<<< HEAD
-=======
 tf.logging.set_verbosity(tf.logging.ERROR)
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
 feature_columns = []
 for i in range(len(CSV_COLUMNS) - 1):
   feature_columns.append(tf.feature_column.numeric_column(CSV_COLUMNS[i]))
@@ -189,32 +183,16 @@ def input_fn(data_file, num_epochs, shuffle):
       num_threads=5)
 
 
-<<<<<<< HEAD
-def train_and_eval(model_dir, model_type, train_steps, train_data, test_data, 
-    train_new, eval_new, user_input):
-    """Train and evaluate the model."""
-    print(train_new, eval_new)
-    train_file_name, test_file_name = maybe_download(train_data, test_data)
-=======
 def train_and_eval(model_dir, model_type, train_steps, train_data, test_data,
     train_new, eval_new, user_input):
     """Train and evaluate the model."""
     #print(train_new, eval_new)
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
     model_dir = tempfile.mkdtemp() if not model_dir else model_dir
 
     m = build_estimator(model_dir, model_type)
     # set num_epochs to None to get infinite stream of data.
     if train_new:
         print('TRAINING ...')
-<<<<<<< HEAD
-        m.train(
-            input_fn=input_fn(train_file_name, num_epochs=None, shuffle=True),
-            steps=train_steps)
-        
-    if eval_new:
-        print('EVALUATING ...')
-=======
         train_file_name, test_file_name = maybe_download(train_data, test_data)
         m.train(
             input_fn=input_fn(train_file_name, num_epochs=None, shuffle=True),
@@ -223,7 +201,6 @@ def train_and_eval(model_dir, model_type, train_steps, train_data, test_data,
     if eval_new:
         print('EVALUATING ...')
         train_file_name, test_file_name = maybe_download(train_data, test_data)
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
         # set steps to None to run evaluation until all data consumed
         results = m.evaluate(
             input_fn=input_fn(test_file_name, num_epochs=1, shuffle=False),
@@ -232,11 +209,7 @@ def train_and_eval(model_dir, model_type, train_steps, train_data, test_data,
             print("%s: %s" % (key, results[key]))
 
     if user_input:
-<<<<<<< HEAD
-        print('PREDICTING ...')
-=======
         #print('PREDICTING ...')
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
         arr = eval(user_input)
         #new_sample = np.array(arr, dtype=np.int32)
         x = {}
@@ -247,17 +220,10 @@ def train_and_eval(model_dir, model_type, train_steps, train_data, test_data,
             num_epochs=1,
             shuffle=False)
         predictions = list(m.predict(input_fn=predict_input_fn))
-<<<<<<< HEAD
-        print(predictions)
-        predicted_classes = [p["class_ids"] for p in predictions]
-        print(predicted_classes)
-        return predicted_classes[0][0]
-=======
         #print(predictions)
         predicted_classes = [p["class_ids"] for p in predictions]
         #print(predicted_classes)
         print(predicted_classes[0][0])
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
 
     print("model directory = %s" % model_dir)
 
