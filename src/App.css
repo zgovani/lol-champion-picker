@@ -28,12 +28,11 @@
 }
 
 .content {
-  width: 1220px !important;
+  width: 100% !important;
   position: absolute;
-  top: 50%;
+  top: 100px;
   left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
 }
 
 .box {
@@ -78,25 +77,25 @@
 }
 
 .champ-image {
-  width:76px;
+  width:60px;
   margin:1px;
 }
 
 .selected-image {
-  width:76px;
+  width:60px;
   margin-bottom:10px;
 }
 
 .champ-image:hover {
   cursor: pointer;
-  width:72px;
+  width:56px;
   margin:3px;
 }
 
 .champ-select-box {
   overflow: auto;
-  width: 820px;
-  height: 600px;
+  width: 640px;
+  height: 384px;
   background-color:#ffffff;
   display: inline-block;
 }

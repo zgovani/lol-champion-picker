@@ -223,7 +223,7 @@ class App extends Component {
   renderChampions(champion_names, start_index) {
     const listItems = champion_names.map((pick, i) =>
       <td>
-        <Image fuck="shit" className="champ-image" width="80px" src={require('./images/' + pick + '.png')} alt={pick} id={(start_index + i)} onClick={this.championClicked}/>
+        <Image fuck="shit" className="champ-image" src={require('./images/' + pick + '.png')} alt={pick} id={(start_index + i)} onClick={this.championClicked}/>
       </td>
     );
 
