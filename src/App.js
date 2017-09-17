@@ -29,9 +29,12 @@ class App extends Component {
       team_one_picks: Array(0),
       team_two_picks: Array(0),
       currentSelection: 1,  //1 = left 1, 2 = left 2... 6 = right 1
+      currentLabel: null
     };
 
     this.championClicked = this.championClicked.bind(this);
+    this.onHover = this.onHover.bind(this);
+    this.onMouseOut = this.onMouseOut.bind(this);
   }
 
   componentWillMount() {
@@ -58,6 +61,25 @@ class App extends Component {
       },
       dataType: 'json'
     });
+  }
+
+  renderLabelText(text) {
+    if (text == null) {
+      return null;
+    }
+    return (<p className="champlabel">{text}</p>);
+  }
+
+  onHover(e) {
+    this.setState({
+      currentLabel: champions_list[e.target.id]
+    })
+  }
+
+  onMouseOut(e) {
+    this.setState({
+      currentLabel: null
+    })
   }
 
   championClicked(e) {
@@ -98,7 +120,7 @@ class App extends Component {
   renderChampions(champion_names, start_index) {
     const listItems = champion_names.map((pick, i) =>
       <td>
-        <Image className="champ-image" src={require('./images/' + pick + '.png')} alt={pick} id={(start_index + i)} onClick={this.championClicked}/>
+        <Image className="champ-image" src={require('./images/' + pick + '.png')} alt={pick} id={(start_index + i)} onClick={this.championClicked} onMouseOut={this.onMouseOut} onMouseOver={this.onHover}/>
       </td>
     );
 
@@ -132,6 +154,7 @@ class App extends Component {
   }
 
   predict() {
+    var PythonShell = require('python-shell');
     console.log(PythonShell)
     PythonShell.run('test.py', function (err, results) {
       if (err) throw err;
@@ -143,6 +166,8 @@ class App extends Component {
   render() {
     let team_one_list = this.renderTeamOnePicks(this.state.team_one_picks);
     let team_two_list = this.renderTeamOnePicks(this.state.team_two_picks);
+
+    let labelText = this.renderLabelText(this.state.currentLabel);
 
     var rows = [];
 
@@ -158,6 +183,7 @@ class App extends Component {
     return (
       //{this.renderTeamOnePicks(this.state.team_one_picks)}
       <div className="App">
+      {labelText}
       	<div className="content">
       	<div className="left-column">
       		<h3 className="column-header">Your Team</h3>
@@ -199,7 +225,7 @@ class App extends Component {
 class Image extends Component {
   render() {
     return (
-      <img className={this.props.className} width={this.props.width} src={this.props.src} alt={this.props.alt} id={this.props.id} onClick={this.props.onClick}/>
+      <div><img className={this.props.className} width={this.props.width} src={this.props.src} alt={this.props.alt} id={this.props.id} onMouseOut={this.props.onMouseOut} onClick={this.props.onClick} onMouseOver={this.props.onMouseOver}/></div>
       );
   }
 }
