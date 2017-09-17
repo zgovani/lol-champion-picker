@@ -72,7 +72,7 @@ class App extends Component {
     if (text == null || this.state.currentWinner != null) {
       return null;
     }
-    return (<p className="champlabel">{text}</p>);
+    return (<p className="champ-label-2">{text}</p>);
   }
 
   onHover(e) {
@@ -167,16 +167,14 @@ class App extends Component {
     }
 
     if (winningTeam == 0) {
-      return (<p>Your team is predicted to wins</p>);
+      return (<h3 className="champ-label">Your team is predicted to wins</h3>);
     } else {
-      return (<p>Enemy team is predicted to win!</p>);
+      return (<h3 className="champ-label">Enemy team is predicted to win!</h3>);
     }
   }
 
   predict(e) {
-    this.setState({
-      currentWinner: 1
-    })
+   
 
     var your_picks = this.state.team_one_picks;
     var enemy_picks = this.state.team_two_picks;
@@ -201,7 +199,12 @@ class App extends Component {
       },
       body: JSON.stringify({
         'input': input,
-      })
+      }).then(response => response.json())
+      .then(response => {
+        this.setState({
+          currentWinner: response
+        })
+      }
     })
   }
 
@@ -225,7 +228,7 @@ class App extends Component {
 
   renderResetButton() {
     if (this.state.currentWinner != null) {
-      return (<Button color="info" onClick={this.reset}>Reset</Button>)
+      return (<Button className="reset-button" onClick={this.reset}>Reset</Button>)
     } else {
       return null;
     }
@@ -257,6 +260,7 @@ class App extends Component {
       //{this.renderTeamOnePicks(this.state.team_one_picks)}
       <div className="App">
         <h1 className="header-text">League of Legends Match Predictor</h1>
+        {labelText}
         <div className="content">
         <div className="left-column">
           <h3 className="column-header">Your Team</h3>
@@ -288,8 +292,7 @@ class App extends Component {
 
         <div position="relative">
           {predictButton}
-          {labelText}
-          <h1 className="champlabel">{winningTeam}</h1>
+          {winningTeam}
           {resetButton}
         </div>
       </div>

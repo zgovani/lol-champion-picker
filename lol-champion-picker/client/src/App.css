@@ -50,7 +50,7 @@ body {
 }
 
 .content {
-  margin-top: 30px;
+  margin-top: 40px;
   width: 1080px !important;
   position: absolute;
   top: 100px;
@@ -102,15 +102,41 @@ body {
   width: 200px;
   height: 80px;
   background-color: #c93c3c !important;
+  color: white;
   font-size: 24px;
   border-radius: 5px;
   border: none !important;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: bold;
+  -moz-transition: background-color .5s ease;
+  -o-transition: background-color .5s ease;
+  -webkit-transition: background-color .5s ease;
+  transition: background-color .5s ease;
 }
 
 .predict-button:hover {
   background-color: #992929 !important;
+  cursor: pointer;
+}
+
+.reset-button {
+  width: 110px;
+  height: 60px;
+  background-color: #269948;
+  color: white;
+  font-size: 24px;
+  border-radius: 5px;
+  border: none !important;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: bold;
+  -moz-transition: background-color .5s ease;
+  -o-transition: background-color .5s ease;
+  -webkit-transition: background-color .5s ease;
+  transition: background-color .5s ease;
+}
+
+.reset-button:hover {
+  background-color: #1c7737;
   cursor: pointer;
 }
 
@@ -204,9 +230,16 @@ body {
   opacity: 1;
 }
 
-.champlabel {
-  margin-top:7px;
+.champ-label {
+  margin-top: 25px;
   color: white;
+  font-size: 20px;
+}
+
+.champ-label-2 {
+  margin-top: 30px;
+  color: white;
+  font-size: 16px;
 }
 
 thead, tbody, tr, th { display: block; }
