@@ -20,7 +20,7 @@ from __future__ import print_function
 import argparse
 import sys
 import tempfile
-import os
+import numpy as np
 
 import pandas as pd
 from six.moves import urllib
@@ -109,6 +109,7 @@ def maybe_download(train_data, test_data):
   """Maybe downloads training data and returns train and test file names."""
   if train_data:
     f = open(train_data, "r")
+    print(f.name)
     train_file_name = f.name
     f.close()
   else:
@@ -122,6 +123,7 @@ def maybe_download(train_data, test_data):
 
   if test_data:
     f = open(test_data, "r")
+    print(f.name)
     test_file_name = f.name
     f.close()
   else:
@@ -145,13 +147,17 @@ def build_estimator(model_dir, model_type):
     m = tf.estimator.DNNClassifier(
         model_dir=model_dir,
         feature_columns=feature_columns,
-        hidden_units=[100, 50])
+        hidden_units=[100])
   else:
     m = tf.estimator.DNNLinearCombinedClassifier(
         model_dir=model_dir,
         linear_feature_columns=feature_columns,
         dnn_feature_columns=feature_columns,
-        dnn_hidden_units=[100, 50])
+        dnn_hidden_units=[100, 50],
+        linear_optimizer=tf.train.FtrlOptimizer(
+          learning_rate=0.1,
+          l1_regularization_strength=1.0,
+          l2_regularization_strength=1.0))
   return m
 
 
@@ -174,36 +180,54 @@ def input_fn(data_file, num_epochs, shuffle):
 
 
 def train_and_eval(model_dir, model_type, train_steps, train_data, test_data, 
-  train_new, eval_new):
-  """Train and evaluate the model."""
-  print(train_new, eval_new)
-  train_file_name, test_file_name = maybe_download(train_data, test_data)
-  model_dir = tempfile.mkdtemp() if not model_dir else model_dir
+    train_new, eval_new, user_input):
+    """Train and evaluate the model."""
+    print(train_new, eval_new)
+    train_file_name, test_file_name = maybe_download(train_data, test_data)
+    model_dir = tempfile.mkdtemp() if not model_dir else model_dir
 
-  m = build_estimator(model_dir, model_type)
-  # set num_epochs to None to get infinite stream of data.
-  if train_new:
-    print('TRAINING ...')
-    m.train(
-        input_fn=input_fn(train_file_name, num_epochs=None, shuffle=True),
-        steps=train_steps)
-    
-  if eval_new:
-    print('EVALUATING ...')
-    # set steps to None to run evaluation until all data consumed
-    results = m.evaluate(
-        input_fn=input_fn(test_file_name, num_epochs=1, shuffle=False),
-        steps=None)
-    for key in sorted(results):
-      print("%s: %s" % (key, results[key]))
-  print("model directory = %s" % model_dir)
+    m = build_estimator(model_dir, model_type)
+    # set num_epochs to None to get infinite stream of data.
+    if train_new:
+        print('TRAINING ...')
+        m.train(
+            input_fn=input_fn(train_file_name, num_epochs=None, shuffle=True),
+            steps=train_steps)
+        
+    if eval_new:
+        print('EVALUATING ...')
+        # set steps to None to run evaluation until all data consumed
+        results = m.evaluate(
+            input_fn=input_fn(test_file_name, num_epochs=1, shuffle=False),
+            steps=None)
+        for key in sorted(results):
+            print("%s: %s" % (key, results[key]))
+
+    if user_input:
+        print('PREDICTING ...')
+        arr = eval(user_input)
+        #new_sample = np.array(arr, dtype=np.int32)
+        x = {}
+        for i in range(len(arr)):
+            x[CSV_COLUMNS[i]] = np.array([arr[i]], dtype=np.int32)
+        predict_input_fn = tf.estimator.inputs.numpy_input_fn(
+            x=x,
+            num_epochs=1,
+            shuffle=False)
+        predictions = list(m.predict(input_fn=predict_input_fn))
+        print(predictions)
+        predicted_classes = [p["class_ids"] for p in predictions]
+        print(predicted_classes)
+        return predicted_classes[0][0]
+
+    print("model directory = %s" % model_dir)
 
 FLAGS = None
 
 def main(_):
-  train_and_eval(FLAGS.model_dir, FLAGS.model_type, FLAGS.train_steps,
+    return train_and_eval(FLAGS.model_dir, FLAGS.model_type, FLAGS.train_steps,
                  FLAGS.train_data, FLAGS.test_data, FLAGS.train_new,
-                 FLAGS.eval_new)
+                 FLAGS.eval_new, FLAGS.user_input)
 
 
 if __name__ == "__main__":
@@ -212,13 +236,13 @@ if __name__ == "__main__":
   parser.add_argument(
       "--model_dir",
       type=str,
-      default="C:/Users/julia/OneDrive/Documents/GitHub/lol-champion-picker/tensorflow/data",
+      default="./model_combined",
       help="Base directory for output models."
   )
   parser.add_argument(
       "--model_type",
       type=str,
-      default="wide_n_deep",
+      default="wide_and_deep",
       help="Valid model types: {'wide', 'deep', 'wide_n_deep'}."
   )
   parser.add_argument(
@@ -230,13 +254,13 @@ if __name__ == "__main__":
   parser.add_argument(
       "--train_data",
       type=str,
-      default="C:/Users/julia/testing/tester.txt",
+      default="./data/training_set_10000.txt",
       help="Path to the training data."
   )
   parser.add_argument(
       "--test_data",
       type=str,
-      default="C:/Users/julia/testing/test2.txt",
+      default=".data/test2.txt",
       help="Path to the test data."
   )
   parser.add_argument(
@@ -250,6 +274,12 @@ if __name__ == "__main__":
       type=bool,
       default=False,
       help="Whether we want to evaluate a new model."
+  )
+  parser.add_argument(
+      "--user_input",
+      type=str,
+      default="[1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+      help="String of an array representing new user input."
   )
   FLAGS, unparsed = parser.parse_known_args()
   tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
