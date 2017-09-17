@@ -256,6 +256,10 @@ class App extends Component {
     return r;
   }
 
+  predict() {
+    alert('hi');
+  }
+
   render() {
     let team_one_list = this.renderTeamOnePicks(this.state.team_one_picks);
     let team_two_list = this.renderTeamOnePicks(this.state.team_two_picks);
@@ -301,6 +305,10 @@ class App extends Component {
             </tbody>
           </table>
       	</div>
+
+        <div position="relative">
+          <Button className="goButton" color="success" onClick={this.predict}>Predict</Button>
+        </div>
       </div>
       </div>
     );
