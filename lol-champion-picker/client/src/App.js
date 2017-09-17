@@ -69,7 +69,7 @@ class App extends Component {
   }
 
   renderLabelText(text) {
-    if (text == null) {
+    if (text == null || this.state.currentWinner != null) {
       return null;
     }
     return (<p className="champlabel">{text}</p>);
@@ -257,7 +257,6 @@ class App extends Component {
       //{this.renderTeamOnePicks(this.state.team_one_picks)}
       <div className="App">
         <h1 className="header-text">League of Legends Match Predictor</h1>
-        {labelText}
         <div className="content">
         <div className="left-column">
           <h3 className="column-header">Your Team</h3>
@@ -289,6 +288,7 @@ class App extends Component {
 
         <div position="relative">
           {predictButton}
+          {labelText}
           <h1 className="champlabel">{winningTeam}</h1>
           {resetButton}
         </div>
