@@ -62,7 +62,6 @@ body {
 .left-column {
   width: 200px;
   height: 400px;
-  padding-top: 20px;
   background-color: black;
   display: inline-block;
   float: left;
@@ -71,7 +70,6 @@ body {
 .right-column {
   width: 200px;
   height: 400px;
-  padding-top: 20px;
   background-color: black;
   display: inline-block;
   float: right;
@@ -81,7 +79,7 @@ body {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 18px;
   color: white;
-  margin-bottom:20px;
+  margin-bottom: 35px;
 }
 
 .champ-button {

@@ -309,7 +309,7 @@ class App extends Component {
       	</div>
 
         <div position="relative">
-          <Button className="goButton" color="success" onClick={this.predict}>Predict</Button>
+          <Button className="go-button" color="success" onClick={this.predict}>Predict</Button>
         </div>
       </div>
       </div>
