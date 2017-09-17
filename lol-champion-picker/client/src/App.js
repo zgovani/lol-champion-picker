@@ -28,6 +28,7 @@ class App extends Component {
       currentSelection: 0,  //1 = left 1, 2 = left 2... 6 = right 1
       currentLabel: null,
       currentWinner: null,
+      calculating: null
     };
 
     this.championClicked = this.championClicked.bind(this);
@@ -175,6 +176,9 @@ class App extends Component {
 
   predict(e) {
 
+    this.setState({
+      calculating: true
+    });
 
     var your_picks = this.state.team_one_picks;
     var enemy_picks = this.state.team_two_picks;
@@ -204,12 +208,16 @@ class App extends Component {
     .then(response => {
       console.log("RESPONSE: " + response);
       this.setState({
-        currentWinner: response
+        currentWinner: response,
+        calculating: null
       })
     })
   }
 
   renderPredictButton() {
+    if (this.state.calculating != null) {
+      return (<div className="loader"></div>)
+    }
     if (this.state.currentWinner == null) {
       return (<Button className="predict-button" color="success" onClick={this.predict}>Predict</Button>);
     } else {
