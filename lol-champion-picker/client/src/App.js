@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button } from 'reactstrap';
 import $ from 'jquery';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const champions_list = ["Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie", "Ashe", "AurelionSol", "Azir",
     "Bard", "Blitzcrank", "Brand", "Braum", "Caitlyn", "Camille", "Cassiopeia", "Chogath", "Corki", "Darius",
@@ -26,13 +26,20 @@ class App extends Component {
       team_one_picks: Array(0),
       team_two_picks: Array(0),
       currentSelection: 0,  //1 = left 1, 2 = left 2... 6 = right 1
-      currentLabel: null
+      currentLabel: null,
+      currentWinner: null,
     };
 
     this.championClicked = this.championClicked.bind(this);
     this.predict = this.predict.bind(this)
     this.onHover = this.onHover.bind(this);
     this.onMouseOut = this.onMouseOut.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.reset = this.reset.bind(this);
+  }
+
+  toggle() {
+    
   }
 
   componentWillMount() {
@@ -62,7 +69,7 @@ class App extends Component {
   }
 
   renderLabelText(text) {
-    if (text == null) {
+    if (text == null || this.state.currentWinner != null) {
       return null;
     }
     return (<p className="champlabel">{text}</p>);
@@ -154,7 +161,23 @@ class App extends Component {
     return r;
   }
 
+  renderWinLossText(winningTeam) {  //winningTeam = 0 or 1
+    if (winningTeam == null) {
+      return null;
+    }
+
+    if (winningTeam == 0) {
+      return (<p>Your team is predicted to wins</p>);
+    } else {
+      return (<p>Enemy team is predicted to win!</p>);
+    }
+  }
+
   predict(e) {
+    this.setState({
+      currentWinner: 1
+    })
+
     var your_picks = this.state.team_one_picks;
     var enemy_picks = this.state.team_two_picks;
     var input = Array.apply(null, Array(276)).map(Number.prototype.valueOf, 0);
@@ -182,11 +205,42 @@ class App extends Component {
     })
   }
 
+  renderPredictButton() {
+    if (this.state.currentWinner == null) {
+      return (<Button className="predict-button" color="success" onClick={this.predict}>Predict</Button>);
+    } else {
+      return null;
+    }
+  }
+
+  reset() {
+    this.setState({
+      team_one_picks: Array(0),
+      team_two_picks: Array(0),
+      currentSelection: 0,  //1 = left 1, 2 = left 2... 6 = right 1
+      currentLabel: null,
+      currentWinner: null,
+    })
+  }
+
+  renderResetButton() {
+    if (this.state.currentWinner != null) {
+      return (<Button color="info" onClick={this.reset}>Reset</Button>)
+    } else {
+      return null;
+    }
+  }
+
   render() {
     let team_one_list = this.renderTeamOnePicks(this.state.team_one_picks);
     let team_two_list = this.renderTeamOnePicks(this.state.team_two_picks);
 
     let labelText = this.renderLabelText(this.state.currentLabel);
+
+    let winningTeam = this.renderWinLossText(this.state.currentWinner);
+
+    let predictButton = this.renderPredictButton();
+    let resetButton = this.renderResetButton();
 
     var rows = [];
 
@@ -203,7 +257,6 @@ class App extends Component {
       //{this.renderTeamOnePicks(this.state.team_one_picks)}
       <div className="App">
         <h1 className="header-text">League of Legends Match Predictor</h1>
-        {labelText}
         <div className="content">
         <div className="left-column">
           <h3 className="column-header">Your Team</h3>
@@ -234,7 +287,10 @@ class App extends Component {
         </div>
 
         <div position="relative">
-          <Button className="predict-button" color="success" onClick={this.predict}>Predict</Button>
+          {predictButton}
+          {labelText}
+          <h1 className="champlabel">{winningTeam}</h1>
+          {resetButton}
         </div>
       </div>
       </div>
