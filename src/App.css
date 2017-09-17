@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: #444444;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6d6d6d;
+}
+
+body {
+  background-color: black !important;
+}
 
 .App {
   text-align: center;
-  height: 100%;
 }
 
 .App-logo {
@@ -48,7 +64,7 @@
   width: 200px;
   height: 600px;
   padding-top: 20px;
-  background-color: white;
+  background-color: black;
   display: inline-block;
   float: left;
 }
@@ -57,15 +73,15 @@
   width: 200px;
   height: 600px;
   padding-top: 20px;
-  background-color: white;
+  background-color: black;
   display: inline-block;
   float: right;
 }
 
 .column-header {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 18px;
-  color: black;
+  color: white;
   margin-bottom:20px;
 }
 
@@ -96,8 +112,8 @@
 .champ-select-box {
   overflow: auto;
   width: 820px;
-  height: 600px;
-  background-color:#ffffff;
+  height: 500px;
+  background-color: black;
   display: inline-block;
 }
 

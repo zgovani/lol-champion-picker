@@ -182,10 +182,12 @@ class App extends Component {
   championClicked(e) {
     var currentList = [];
     var currentSelection = this.state.currentSelection;
-    if (currentSelection >= 6) {
-      currentList = this.state.team_two_picks.slice();
+    if (currentSelection <= 5) {
+     	currentList = this.state.team_one_picks.slice();
+    } else if (currentSelection <= 10) {
+     	currentList = this.state.team_two_picks.slice();
     } else {
-      currentList = this.state.team_one_picks.slice();
+    	return;
     }
 
     currentList[currentSelection % 6] = e.target.id;
