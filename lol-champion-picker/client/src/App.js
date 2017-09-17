@@ -256,7 +256,8 @@ class App extends Component {
     return (
       //{this.renderTeamOnePicks(this.state.team_one_picks)}
       <div className="App">
-      {labelText}
+        <h1 className="header-text">League of Legends Match Predictor</h1>
+        {labelText}
         <div className="content">
         <div className="left-column">
           <h3 className="column-header">Your Team</h3>

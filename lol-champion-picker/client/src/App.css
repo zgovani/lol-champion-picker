@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 
 ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
-    cursor: pointer;
+  width: 7px;
+  height: 7px;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar-track {
-    background: #444444;
+  background: #444444;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #6d6d6d;
+  background-color: #6d6d6d;
 }
 
 body {
@@ -44,8 +44,14 @@ body {
   to { transform: rotate(360deg); }
 }
 
+.header-text {
+  color: white;
+  margin-top: 40px;
+}
+
 .content {
-  width: 1050px !important;
+  margin-top: 30px;
+  width: 1080px !important;
   position: absolute;
   top: 100px;
   left: 50%;
@@ -79,6 +85,7 @@ body {
 .column-header {
   font-size: 18px;
   color: white;
+  margin-top: 0;
   margin-bottom: 35px;
 }
 
@@ -95,11 +102,11 @@ body {
   width: 200px;
   height: 80px;
   background-color: #c93c3c !important;
+  font-size: 24px;
+  border-radius: 5px;
   border: none !important;
-}
-
-.predict-button:first-line {
-  font-size: 30px;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: bold;
 }
 
 .predict-button:hover {
@@ -114,7 +121,6 @@ body {
 
 .selected-image {
   width: 60px;
-  margin-bottom: 10px;
 }
 
 .champ-image:hover {
@@ -125,7 +131,7 @@ body {
 
 .champ-select-box {
   overflow: auto;
-  width: 650px;
+  width: 680px;
   height: 400px;
   background-color: black;
   display: inline-block;
@@ -135,8 +141,8 @@ body {
  * Tooltip Styles
  */
 
-/* Add this attribute to the element that needs a tooltip */
-[data-tooltip] {
+ /* Add this attribute to the element that needs a tooltip */
+ [data-tooltip] {
   position: relative;
   z-index: 2;
   cursor: pointer;
