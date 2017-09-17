@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Button } from 'reactstrap';
 import $ from 'jquery';
+import { PythonShell } from 'python-shell';
 
 import roboto from './fonts/Roboto/Roboto-Light.ttf'
 
@@ -266,7 +267,12 @@ class App extends Component {
   }
 
   predict() {
-    alert('hi');
+    console.log(PythonShell)
+    PythonShell.run('test.py', function (err, results) {
+      if (err) throw err;
+    // results is an array consisting of messages collected during execution
+      console.log('results: %j', results);
+    });
   }
 
   render() {
@@ -316,7 +322,7 @@ class App extends Component {
       	</div>
 
         <div position="relative">
-          <Button className="go-button" color="success" onClick={this.predict}>Predict</Button>
+          <Button className="predict-button" color="success" onClick={this.predict}>Predict</Button>
         </div>
       </div>
       </div>
@@ -327,7 +333,7 @@ class App extends Component {
 class Image extends Component {
   render() {
     return (
-      <img fuck={this.props.fuck} className={this.props.className} width={this.props.width} src={this.props.src} alt={this.props.alt} id={this.props.id} onClick={this.props.onClick}/>
+      <img className={this.props.className} width={this.props.width} src={this.props.src} alt={this.props.alt} id={this.props.id} onClick={this.props.onClick}/>
       );
   }
 }

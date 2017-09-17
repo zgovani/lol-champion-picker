@@ -20,6 +20,7 @@ body {
 
 .App {
   text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .App-logo {
@@ -76,44 +77,50 @@ body {
 }
 
 .column-header {
-  font-family: 'Roboto Slab', sans-serif;
   font-size: 18px;
   color: white;
   margin-bottom: 35px;
 }
 
 .champ-button {
-  width:120px;
-  height:120px;
-  border-width:0px;
-  padding:0px;
-  line-height:0;
+  width: 120px;
+  height: 120px;
+  border-width: 0px;
+  padding: 0px;
+  line-height: 0;
 }
 
-.goButton {
-  margin-top:50px;
-  width:320px;
-  height:120px;
+.predict-button {
+  margin-top: 30px;
+  width: 200px;
+  height: 80px;
+  background-color: #c93c3c !important;
+  border: none !important;
 }
 
-.goButton:first-line {
-  font-size:50px;
+.predict-button:first-line {
+  font-size: 30px;
+}
+
+.predict-button:hover {
+  background-color: #992929 !important;
+  cursor: pointer;
 }
 
 .champ-image {
-  width:60px;
-  margin:1px;
+  width: 60px;
+  margin: 1px;
 }
 
 .selected-image {
-  width:60px;
-  margin-bottom:10px;
+  width: 60px;
+  margin-bottom: 10px;
 }
 
 .champ-image:hover {
   cursor: pointer;
-  width:56px;
-  margin:3px;
+  width: 56px;
+  margin: 3px;
 }
 
 .champ-select-box {
