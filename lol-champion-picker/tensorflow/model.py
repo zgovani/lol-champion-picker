@@ -264,13 +264,9 @@ def train_and_eval(model_dir, model_type, train_steps, train_data, test_data,
 FLAGS = None
 
 def main(_):
-<<<<<<< HEAD
     return train_and_eval(FLAGS.model_dir, FLAGS.model_type, FLAGS.train_steps,
-=======
-    train_and_eval(FLAGS.model_dir, FLAGS.model_type, FLAGS.train_steps,
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
-                 FLAGS.train_data, FLAGS.test_data, FLAGS.train_new,
-                 FLAGS.eval_new, FLAGS.user_input)
+        FLAGS.train_data, FLAGS.test_data, FLAGS.train_new,
+        FLAGS.eval_new, FLAGS.user_input)
 
 
 if __name__ == "__main__":
@@ -279,11 +275,8 @@ if __name__ == "__main__":
   parser.add_argument(
       "--model_dir",
       type=str,
-<<<<<<< HEAD
       default="./model_combined",
-=======
-      default="/Users/Zach/Desktop/lolchamp/lol-champion-picker/tensorflow/model_combined",
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
+      #default="/Users/Zach/Desktop/lolchamp/lol-champion-picker/tensorflow/model_combined",
       help="Base directory for output models."
   )
   parser.add_argument(
@@ -301,11 +294,7 @@ if __name__ == "__main__":
   parser.add_argument(
       "--train_data",
       type=str,
-<<<<<<< HEAD
-      default="./data/training_set_10000.txt",
-=======
       default="./data/training_set_15000.txt",
->>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
       help="Path to the training data."
   )
   parser.add_argument(
