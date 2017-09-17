@@ -1,0 +1,308 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"curr",
+				"currentSelection"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"set",
+				"setIndex"
+			],
+			[
+				"card",
+				"cardSet"
+			],
+			[
+				"indexTo",
+				"indexToSymbolCase"
+			],
+			[
+				"n",
+				"numDisjoint"
+			],
+			[
+				"car",
+				"cardDict"
+			],
+			[
+				"a",
+				"attributes"
+			],
+			[
+				"num",
+				"numCards"
+			],
+			[
+				"tex",
+				"textContainer"
+			],
+			[
+				"sty",
+				"styles"
+			],
+			[
+				"c",
+				"calories"
+			],
+			[
+				"cur",
+				"cur_price"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 980.0,
+		"last_filter": "package",
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 1070.0
+	},
+	"console":
+	{
+		"height": 308.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/lol-champion-picker/app.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/lol-champion-picker/client/package.json",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/css/style.css",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/server.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/App.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/static/index.html",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/app-client.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/components/IndexPage.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/lol-champion-picker/client/src/App.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/lol-champion-picker/client/src/index.css",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/webpack.config.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/static/js/bundle.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/index.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/registerServiceWorker.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/node_modules/python-shell/index.js",
+		"/C/Users/Ellen Luo/Documents/Career/sift_coding_challenge.py",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/App.css",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/test.py",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/static/css/App.css",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/App.test.js",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/src/static/css/index.css",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/node_modules/child_process/package.json",
+		"/C/Users/Ellen Luo/Documents/lol-champion-picker/package.json",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/berkeley-forum-announces-fall-2017-event-lineup.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/berkeley-forum-announces-spring-2017-event-lineup.html",
+		"/C/Users/Ellen Luo/Documents/Career/siftchallenge.py",
+		"/C/Users/Ellen Luo/Downloads/jquery-3.2.1.min.js",
+		"/C/Users/Ellen Luo/Downloads/siftchallenge.py",
+		"/C/Users/Ellen Luo/Downloads/sift_coding_challenge.py",
+		"/C/Users/Ellen Luo/Downloads/siftchallenge (1).py",
+		"/C/Users/Ellen Luo/Downloads/hog.py",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/join/application.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/lineup/index.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/lineup/index2.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/join/index.html",
+		"/C/Users/Ellen Luo/AppData/Local/Temp/Temp1_Fall 2017 Lineup Announcement.zip/Fall2017LineupAnnouncement.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/join/reasons.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/header.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/join/applying.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/join/teams.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/meet-our-team.html",
+		"/C/Users/Ellen Luo/Documents/Berkeley Forum/forum-website/teampagemaker/team_helper.html",
+		"/C/Users/Ellen Luo/Documents/CodeBase/MinYikYak/index.android.js",
+		"/C/Users/Ellen Luo/Documents/CS61B/akr/hw2/hw2/Percolation.java",
+		"/C/Users/Ellen Luo/Documents/CS61A/Projects/scheme/questions.scm",
+		"/C/Users/Ellen Luo/Documents/CS61A/Projects/scheme/scheme.py",
+		"/C/Users/Ellen Luo/Documents/CodeBase/sutro/components/BottomNavBar.js",
+		"/C/Users/Ellen Luo/Documents/Kloudless/ellen/kloudless.ovpn",
+		"/C/Users/Ellen Luo/OpenVPN/config/kloudless/kloudless.ovpn",
+		"/C/Users/Ellen Luo/Downloads/grade.py",
+		"/C/Users/Ellen Luo/Documents/CS61A/Projects/scheme/scheme_reader.py",
+		"/C/Users/Ellen Luo/Documents/CS61A/Projects/scheme/tests.scm",
+		"/C/Users/Ellen Luo/Documents/CodeBase/sutro/components/ios/ChlorineVitalsGraph.ios.js",
+		"/C/Users/Ellen Luo/Documents/CodeBase/sutro/components/ios/ChlorineVitalsGraph.js",
+		"/C/Users/Ellen Luo/Documents/TreeHacks2017/CloudRepo/petreon-159208/app.yaml",
+		"/C/Users/Ellen Luo/Documents/TreeHacks2017/treehacks-2017/petreon-159208/app.yaml",
+		"/C/Users/Ellen Luo/Documents/TreeHacks2017/treehacks-2017/petreon-159208/www/website/js/details.js",
+		"/C/Users/Ellen Luo/Documents/TreeHacks2017/treehacks-2017/petreon-159208/www/website/js/main.js",
+		"/C/Users/Ellen Luo/Documents/TreeHacks2017/treehacks-2017/app.yaml",
+		"/C/Users/Ellen Luo/Documents/TreeHacks2017/treehacks-2017/test.php",
+		"/C/Users/Ellen Luo/Documents/TreeHacks2017/treehacks-2017/pets.js",
+		"/C/Users/Ellen Luo/Documents/TreeHacks2017/CloudRepo/petreon-159208/www/app.yaml",
+		"/C/Users/Ellen Luo/Documents/Cognitio/sydney-child/searchform.php",
+		"/C/Users/Ellen Luo/Documents/Cognitio/sydney-child/header.php",
+		"/C/Users/Ellen Luo/Documents/Cognitio/sydney-child/functions.php",
+		"/C/Users/Ellen Luo/Downloads/search (1).php",
+		"/C/Users/Ellen Luo/Downloads/fp-call-to-action.php",
+		"/C/Users/Ellen Luo/Downloads/style.css",
+		"/C/Users/Ellen Luo/Downloads/home.php",
+		"/C/Users/Ellen Luo/Downloads/header.php",
+		"/C/Users/Ellen Luo/Downloads/functions (1).php",
+		"/C/Users/Ellen Luo/Downloads/index (1).php",
+		"/C/Users/Ellen Luo/Documents/CS61A/Lab/lab13/lab13.sql",
+		"/C/Users/Ellen Luo/Downloads/header (1).php",
+		"/C/Users/Ellen Luo/Downloads/page.php",
+		"/C/Users/Ellen Luo/Downloads/content.php",
+		"/C/Users/Ellen Luo/Documents/Cognitio/sydney-child/search-header.php",
+		"/C/Users/Ellen Luo/Downloads/functions.php",
+		"/C/Users/Ellen Luo/Downloads/search.php",
+		"/C/Users/Ellen Luo/Downloads/page_front-page.php",
+		"/C/Users/Ellen Luo/Documents/CS61A/Lab/lab13/data.sql",
+		"/C/Users/Ellen Luo/Downloads/index.php",
+		"/C/Users/Ellen Luo/Documents/CS61A/Lab/lab14/lab14.py"
+	],
+	"find":
+	{
+		"height": 100.0
+	},
+	"find_in_files":
+	{
+		"height": 220.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 96.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "package.sublime-project",
+	"replace":
+	{
+		"height": 108.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 375.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
