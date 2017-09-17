@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: #444444;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6d6d6d;
+}
+
+body {
+  background-color: black !important;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.content {
+  width: 1050px !important;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.box {
+  width: 600px;
+  height: 600px;
+  background-color: #d9d9d9;
+  top: 50%;
+  left: 50%;
+}
+
+.left-column {
+  width: 200px;
+  height: 400px;
+  background-color: black;
+  display: inline-block;
+  float: left;
+}
+
+.right-column {
+  width: 200px;
+  height: 400px;
+  background-color: black;
+  display: inline-block;
+  float: right;
+}
+
+.column-header {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 35px;
+}
+
+.champ-button {
+  width: 120px;
+  height: 120px;
+  border-width: 0px;
+  padding: 0px;
+  line-height: 0;
+}
+
+.predict-button {
+  margin-top: 30px;
+  width: 200px;
+  height: 80px;
+  background-color: #c93c3c !important;
+  border: none !important;
+}
+
+.predict-button:first-line {
+  font-size: 30px;
+}
+
+.predict-button:hover {
+  background-color: #992929 !important;
+  cursor: pointer;
+}
+
+.champ-image {
+  width: 60px;
+  margin: 1px;
+}
+
+.selected-image {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.champ-image:hover {
+  cursor: pointer;
+  width: 56px;
+  margin: 3px;
+}
+
+.champ-select-box {
+  overflow: auto;
+  width: 650px;
+  height: 400px;
+  background-color: black;
+  display: inline-block;
+}
+
+/**
+ * Tooltip Styles
+ */
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+.champlabel {
+  margin-top: 50px;
+  color: white;
+}
+
+thead, tbody, tr, th { display: block; }
