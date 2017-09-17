@@ -236,7 +236,7 @@ if __name__ == "__main__":
   parser.add_argument(
       "--test_data",
       type=str,
-      default="C:/Users/julia/testing/tester.txt",
+      default="C:/Users/julia/testing/test2.txt",
       help="Path to the test data."
   )
   parser.add_argument(
