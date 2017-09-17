@@ -39,7 +39,11 @@ class App extends Component {
   }
 
   toggle() {
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
   }
 
   componentWillMount() {
@@ -59,10 +63,17 @@ class App extends Component {
       beforeSend: setHeader,
       url: 'https://na1.api.riotgames.com/lol/platform/v3/champions?freeToPlay=false',
       type: 'GET',
+<<<<<<< HEAD
       success: function(data) { 
         //alert(JSON.stringify(data));
       },
       error: function(error) { //alert(JSON.stringify(error)); 
+=======
+      success: function(data) {
+        //alert(JSON.stringify(data));
+      },
+      error: function(error) { //alert(JSON.stringify(error));
+>>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
       },
       dataType: 'json'
     });
@@ -174,7 +185,11 @@ class App extends Component {
   }
 
   predict(e) {
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
 
     var your_picks = this.state.team_one_picks;
     var enemy_picks = this.state.team_two_picks;
@@ -199,11 +214,20 @@ class App extends Component {
       },
       body: JSON.stringify({
         'input': input,
+<<<<<<< HEAD
       }).then(response => response.json())
       .then(response => {
         this.setState({
           currentWinner: response
         })
+=======
+      })
+    })
+    .then(response => {
+      console.log("RESPONSE: " + response);
+      this.setState({
+        currentWinner: response
+>>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
       })
     })
   }
@@ -255,7 +279,11 @@ class App extends Component {
     let renderedTable = this.renderTableFromRows(rows);
 
     //alert(this.state.team_one_picks + " - " + this.state.team_two_picks);
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
     return (
       //{this.renderTeamOnePicks(this.state.team_one_picks)}
       <div className="App">
@@ -264,14 +292,22 @@ class App extends Component {
         <div className="content">
         <div className="left-column">
           <h3 className="column-header">Your Team</h3>
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
           <table width="100%" height="100%" text-align="center">
             <tbody text-align="center">
               {team_one_list}
             </tbody>
           </table>
         </div>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
       <div className="champ-select-box">
         <table>
           <tbody>
@@ -309,4 +345,8 @@ class Image extends Component {
   }
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> f3e56bfdc35992345756af14ba5d6c9731b5147f
