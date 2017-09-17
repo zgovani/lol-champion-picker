@@ -92,6 +92,16 @@ body {
   line-height:0;
 }
 
+.goButton {
+  margin-top:50px;
+  width:320px;
+  height:120px;
+}
+
+.goButton:first-line {
+  font-size:50px;
+}
+
 .champ-image {
   width:60px;
   margin:1px;
