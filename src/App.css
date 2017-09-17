@@ -44,12 +44,11 @@ body {
 }
 
 .content {
-  width: 1220px !important;
+  width: 1050px !important;
   position: absolute;
-  top: 50%;
+  top: 100px;
   left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
 }
 
 .box {
@@ -62,7 +61,7 @@ body {
 
 .left-column {
   width: 200px;
-  height: 600px;
+  height: 400px;
   padding-top: 20px;
   background-color: black;
   display: inline-block;
@@ -71,7 +70,7 @@ body {
 
 .right-column {
   width: 200px;
-  height: 600px;
+  height: 400px;
   padding-top: 20px;
   background-color: black;
   display: inline-block;
@@ -94,25 +93,25 @@ body {
 }
 
 .champ-image {
-  width:76px;
+  width:60px;
   margin:1px;
 }
 
 .selected-image {
-  width:76px;
+  width:60px;
   margin-bottom:10px;
 }
 
 .champ-image:hover {
   cursor: pointer;
-  width:72px;
+  width:56px;
   margin:3px;
 }
 
 .champ-select-box {
   overflow: auto;
-  width: 820px;
-  height: 500px;
+  width: 650px;
+  height: 400px;
   background-color: black;
   display: inline-block;
 }
