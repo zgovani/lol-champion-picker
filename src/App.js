@@ -201,8 +201,15 @@ class App extends Component {
      	currentList = this.state.team_one_picks.slice();
     } else if (currentSelection <= 10) {
      	currentList = this.state.team_two_picks.slice();
+      if (this.state.team_one_picks.indexOf(e.target.id) != -1) {
+        return;
+      }
     } else {
     	return;
+    }
+
+    if (currentList.indexOf(e.target.id) != -1) {
+      return;
     }
 
     currentList[currentSelection % 6] = e.target.id;
