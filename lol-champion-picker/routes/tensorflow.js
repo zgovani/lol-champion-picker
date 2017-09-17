@@ -8,7 +8,7 @@ router.post('/', function(req, res, next) {
 	console.log(pbody.input)
 
 	var options = {
-		scriptPath: './routes/tensorflow',
+		scriptPath: './tensorflow',
 		args: ['--user_input=' + pbody.input]
 	};
 	PythonShell.run('model.py', options, function (err, results) {
