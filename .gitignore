@@ -1,9 +1,6 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-lol-champion-picker/node_modules/
-lol-champion-picker/client/node_modules/
 
 # testing
 /coverage
