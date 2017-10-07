@@ -16,7 +16,13 @@ router.post('/', function(req, res, next) {
 		if (err) { throw err; }
     	// results is an array consisting of messages collected during execution
     	console.log('results: %j', results);
-			res.send(parseInt(results[0]));
+			res.status(200).json({
+				"success": true,
+				"payload": {
+					"value": parseInt(results[0])
+				}
+			});
+			//res.status(200).send(parseInt(results[0]))
     }
 	);
 });
