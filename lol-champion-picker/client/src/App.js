@@ -206,7 +206,7 @@ class App extends Component {
       })
     })
     .then(response => {
-      console.log("RESPONSE: " + response);
+      console.log(JSON.stringify(response));
       this.setState({
         currentWinner: response,
         calculating: null
