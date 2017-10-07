@@ -168,7 +168,7 @@ class App extends Component {
     }
 
     if (winningTeam == 0) {
-      return (<h3 className="champ-label">Your team is predicted to wins</h3>);
+      return (<h3 className="champ-label">Your team is predicted to win!</h3>);
     } else {
       return (<h3 className="champ-label">Enemy team is predicted to win!</h3>);
     }
@@ -205,10 +205,16 @@ class App extends Component {
         'input': input,
       })
     })
+    .then(response => response.json())
     .then(response => {
-      console.log(JSON.stringify(response));
+      console.log('hi')
+      console.log(response.payload.value)
+      var result = response.payload.value
+      //console.log(response.json().Promise.get("[[PromiseValue]]").payload.value);
+      //console.log(response.json().payload.value)
+      //var num = Math.round(Math.random())
       this.setState({
-        currentWinner: response,
+        currentWinner: result,
         calculating: null
       })
     })
