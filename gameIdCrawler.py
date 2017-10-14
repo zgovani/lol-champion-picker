@@ -11,7 +11,7 @@ with open('accountIdsFile.txt', 'r') as myfile:
 myfile.close()
 rawData = ''.join('' if c is " " or c is "\'" or c is "{" or c is "}" or c is "\n" else c for c in rawData)
 accountIds = re.split(",", rawData)
-api_key = "?api_key=RGAPI-d6b5fbf4-fd1b-48fc-a7b4-3d33a8727f20"
+api_key = "?api_key=..."
 crawl_ids = set()
 currentId = ""
 count = 1
