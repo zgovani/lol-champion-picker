@@ -4,7 +4,7 @@ import json
 import time
 # API Script 1
 accountIdsFile = open("accountIdsFile.txt", "w")
-api_key = "?api_key=RGAPI-d6b5fbf4-fd1b-48fc-a7b4-3d33a8727f20"
+api_key = "?api_key= ... "
 crawl_start_basic = "MLGB Blade"
 crawl_ids = set()
 already_crawled = set()
