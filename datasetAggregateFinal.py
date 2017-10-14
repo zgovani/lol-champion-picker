@@ -10,7 +10,7 @@ with open('gameIdsFile.txt', 'r') as myfile:
 myfile.close()
 rawData = ''.join('' if c is " " or c is "\'" or c is "{" or c is "}" or c is "\n" else c for c in rawData)
 gameIds = re.split(",", rawData)
-api_key = "?api_key=RGAPI-882663d5-50f5-4ecc-9c88-8fe7f1754efb"
+api_key = "?api_key=..."
 crawl_ids = set()
 currentId = ""
 count = 1
