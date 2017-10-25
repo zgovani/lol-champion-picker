@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/borisyue/Desktop/lol-champion-picker/lol-champion-picker/tensorflow/tflearnlol.model"
+all_model_checkpoint_paths: "/Users/borisyue/Desktop/lol-champion-picker/lol-champion-picker/tensorflow/tflearnlol.model"

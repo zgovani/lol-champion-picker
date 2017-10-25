@@ -8,11 +8,11 @@ router.post('/', function(req, res, next) {
 	console.log(pbody.input)
 
 	var options = {
-		pythonPath: '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3',
+		pythonPath: '//anaconda/bin/python',
 		scriptPath: './tensorflow',
 		args: ['--user_input=' + pbody.input]
 	};
-	PythonShell.run('model.py', options, function (err, results) {
+	PythonShell.run('test.py', options, function (err, results) {
 		if (err) { throw err; }
     	// results is an array consisting of messages collected during execution
     	console.log('results: %j', results);
@@ -22,7 +22,7 @@ router.post('/', function(req, res, next) {
 					"value": parseInt(results[0])
 				}
 			});
-			//res.status(200).send(parseInt(results[0]))
+			// res.status(200).send(parseInt(results[0]))
     }
 	);
 });

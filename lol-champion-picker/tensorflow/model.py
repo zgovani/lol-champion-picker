@@ -242,7 +242,6 @@ if __name__ == "__main__":
       "--model_dir",
       type=str,
       default="./model_combined",
-      #default="/Users/Zach/Desktop/lolchamp/lol-champion-picker/tensorflow/model_combined",
       help="Base directory for output models."
   )
   parser.add_argument(
@@ -289,4 +288,3 @@ if __name__ == "__main__":
   )
   FLAGS, unparsed = parser.parse_known_args()
   tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
-

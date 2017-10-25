@@ -202,12 +202,11 @@ class App extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        'input': input,
+        "input": input,
       })
     })
     .then(response => response.json())
     .then(response => {
-      console.log('hi')
       console.log(response.payload.value)
       var result = response.payload.value
       //console.log(response.json().Promise.get("[[PromiseValue]]").payload.value);
